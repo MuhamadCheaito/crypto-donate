@@ -23,6 +23,12 @@
             </li>
           </ul>
           <hr style="background-color:white;">
-            <button class="btn btn-outline-success px-4" type="submit">Login</button>
+          <% if (currentUser) { %>
+            <form action="/logout" method="POST">
+              <button type="submit" class="btn btn-outline-danger px-4">Logout</button>
+            </form>
+          <% } else { %>
+            <a class="btn btn-outline-success px-4" href="/login">Login</a>
+          <% } %>
         </div>
       </nav>
